@@ -1,0 +1,39 @@
+<template>
+	<lightning-card>
+		<div class="slds-m-around_medium">
+			<h1 class="slds-text-heading_large">Estrutura de dados</h1>
+
+			<h2 class="slds-text-heading_medium">Account - Object Simples</h2>
+			<p>Nome: {account.name}</p>
+			<p>Tipo: {account.type}</p>
+			<p>Classificação: {account.rating}</p>
+			<p>Site: {account.website}</p>
+
+			<h2 class="slds-text-heading_medium">Pokemons - Lista de Objetos</h2>
+			<!-- 
+				template
+
+				for:each -> recebe uma lista com informações.
+				o template irá repetir a quantidade de
+				elementos da minha lista (pokemons)
+
+				for:item -> determina o local onde cada valor da 
+				lista fica armazenada a cada repetição (poke) nome da
+				variavel individual
+
+				o template só pode ter um filho (tag html)
+				e esse filho é obrigado a ter uma key, 
+				que vai identificar ele de forma única a cada iteração
+			 -->
+			<template for:each={pokemons} for:item='poke'>
+				<p key={poke.cod}>Nome: {poke.nome} - Tipo: {poke.tipo} - Nivel: {poke.nivel}</p>
+				<!-- <div key={poke.cod}>
+					<p>Nome: {poke.nome}</p>
+					<p>Tipo: {poke.tipo}</p>
+					<p>Nivel: {poke.nivel}</p>
+				</div> -->
+			</template>
+
+		</div>
+	</lightning-card>
+</template>
